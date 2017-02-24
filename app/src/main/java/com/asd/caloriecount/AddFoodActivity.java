@@ -44,6 +44,7 @@ public class AddFoodActivity extends AppCompatActivity implements IFoodView {
     int meals_type;
     private ProgressDialog waitingDialog;
     private AddFoodPresenterImpl presenter;
+    private EditText et_search_food;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class AddFoodActivity extends AppCompatActivity implements IFoodView {
         setContentView(R.layout.activity_addfood);
         ActionBar bar = getSupportActionBar();
         bar.hide();
+        et_search_food = (EditText)findViewById(R.id.et_searchfood);
         TextView tv_meals = (TextView) findViewById(R.id.tv_meals);
         btn_add_finish = (Button)findViewById(R.id.btn_add_finish);
         tv_add_num = (TextView)findViewById(R.id.tv_add_num);
@@ -72,6 +74,7 @@ public class AddFoodActivity extends AppCompatActivity implements IFoodView {
         }
         attemptToGetFoodList();
         addList = new ArrayList<>();
+
         btn_add_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +83,16 @@ public class AddFoodActivity extends AppCompatActivity implements IFoodView {
                 intent.putExtra("meals",meals_type);
                 startActivity(intent);
                 finish();
+            }
+        });
+        Button btn_search = (Button)findViewById(R.id.btn_search);
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(et_search_food.getText().toString() != "") {
+                    presenter.getFoodListByName(getApplicationContext(), et_search_food.getText().toString());
+                    showWaitingDialog();
+                }
             }
         });
     }

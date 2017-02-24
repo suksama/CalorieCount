@@ -58,7 +58,7 @@ public class AddFoodPresenterImpl extends Handler implements IAddFoodPresenter {
 
         BmobQuery<Food> bmobQuery = new BmobQuery<>();
         //bmobQuery.setLimit(50);
-        bmobQuery.addWhereContains("fName",name);
+        bmobQuery.addWhereEqualTo("fName",name);
         bmobQuery.findObjects(new FindListener<Food>() {
             @Override
             public void done(List<Food> list, BmobException e) {

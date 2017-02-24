@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private float eaten_breakfast;
     private float eaten_lunch;
     private float eaten_dinner;
-    private int total_calorie = 1632;
+    private int total_calorie = 1250;
     private float breakfast_protein;
     private float breakfast_fat;
     private float breakfast_carbohydrate;
