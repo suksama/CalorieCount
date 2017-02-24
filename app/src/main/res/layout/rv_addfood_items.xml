@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/white"
+    android:id="@+id/rl_food_item"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="米饭"
+        android:textSize="25sp"
+        android:textColor="@color/text_black"
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_name"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="每100g"
+        android:textSize="20sp"
+        android:layout_below="@id/tv_name"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10千卡"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textSize="25sp"
+        android:id="@+id/tv_calorie"
+        />
+
+</RelativeLayout>
